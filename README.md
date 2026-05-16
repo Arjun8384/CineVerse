@@ -1,4 +1,5 @@
-Project Live link: 
+# Project Live link: https://cine-verse-rust-six.vercel.app/
+
 # 🎬 Cine-Stream
 
 Cine-Stream is a Netflix-inspired Media Discovery Single Page Application (SPA) built using React and TMDB API.  
