@@ -1,0 +1,48 @@
+:root {
+  /* Brand */
+  --color-primary: #e50914;
+
+  /* Backgrounds */
+  --color-background: #0f0f0f;
+  --color-surface: #1b1b1b;
+  --color-surface-hover: #252525;
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b3b3b3;
+  --color-border: rgba(
+    255, 255, 255, 0.08
+  );
+
+  --shadow-sm:
+    0 4px 12px rgba(0, 0, 0, 0.2);
+  --shadow-md:
+    0 10px 24px rgba(0, 0, 0, 0.3);
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
+  --transition-fast: 0.2s ease;
+  --transition-normal: 0.3s ease;
+  --header-height: 72px;
+  --container-width: 1400px;
+}
+
+/* Light Theme */
+
+body[data-theme="light"] {
+  --color-background: #dcddcb;
+  --color-surface: #ffffff;
+  --color-surface-hover: #e6fde2;
+  --color-text-primary: #111111;
+  --color-text-secondary: #555555;
+  --color-border: rgba(
+    0,
+    0,
+    0,
+    0.08
+  );
+
+  --shadow-sm:
+    0 4px 10px rgba(0, 0, 0, 0.08);
+
+  --shadow-md:
+    0 8px 20px rgba(0, 0, 0, 0.12);
+}
