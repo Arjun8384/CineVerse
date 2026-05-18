@@ -1,7 +1,7 @@
 import Container from "../components/layout/Container";
 import MovieGrid from "../components/media/MovieGrid";
 import EmptyState from "../components/feedback/EmptyState";
-import { useFavorites } from "../hooks/useFavorites";
+import { useFavorites } from "../context/FavoritesContext";
 
 const Favorites = () => {
   const { favorites } =

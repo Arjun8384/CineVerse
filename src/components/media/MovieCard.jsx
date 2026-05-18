@@ -2,53 +2,63 @@ import MoviePoster from "./MoviePoster";
 import RatingBadge from "./RatingBadge";
 import FavoriteButton from "./FavoriteButton";
 import PropTypes from "prop-types";
+
+import { getYear } from "../../utils/format";
+
 import "./media.css";
 
 const MovieCard = ({ movie }) => {
-  const {
-    title,
-    release_date,
-    vote_average,
-    poster_path,
-  } = movie;
-
-  const releaseYear = release_date
-    ? new Date(release_date).getFullYear()
-    : "N/A";
+  const movieUrl = `https://www.themoviedb.org/movie/${movie.id}`;
 
   return (
-    <article className="movie-card">
-      <MoviePoster
-        path={poster_path}
-        title={title}
-      />
+    <a
+      href={movieUrl}
+      target="_blank"
+      rel="noopener noreferrer"
+      className="movie-card-link"
+    >
+      <div className="movie-card">
+        <div className="movie-poster-wrapper">
+          <MoviePoster
+            path={movie.poster_path}
+            title={movie.title}
+          />
 
-      <FavoriteButton movie={movie} />
-
-      <div className="movie-info">
-        <div className="movie-meta">
-          <h3 className="movie-title">
-            {title}
-          </h3>
-
-          <RatingBadge rating={vote_average} />
+          <FavoriteButton movie={movie} />
         </div>
 
-        <p className="movie-year">
-          {releaseYear}
-        </p>
+        <div className="movie-content">
+          <div className="movie-header">
+            <h3 className="movie-title">
+              {movie.title}
+            </h3>
+
+            <RatingBadge
+              rating={
+                movie.vote_average
+              }
+            />
+          </div>
+
+          <p className="movie-year">
+            {getYear(
+              movie.release_date
+            )}
+          </p>
+        </div>
       </div>
-    </article>
+    </a>
   );
 };
 
 export default MovieCard;
 
 MovieCard.propTypes = {
-    movie: PropTypes.shape({
-        title: PropTypes.string.isRequired,
-        release_date: PropTypes.string,
-        vote_average: PropTypes.number,
-        poster_path: PropTypes.string,
-    }).isRequired,
+  movie: PropTypes.shape({
+    id: PropTypes.number.isRequired,
+    title: PropTypes.string.isRequired,
+    poster_path: PropTypes.string,
+    vote_average: PropTypes.number,
+    release_date: PropTypes.string,
+  }).isRequired,
 };

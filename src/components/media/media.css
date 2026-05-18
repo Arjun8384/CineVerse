@@ -1,12 +1,8 @@
-.movie-grid {
-  display: grid;
-  grid-template-columns: repeat(
-    auto-fill,
-    minmax(240px, 1fr)
-  );
-  gap: 1.5rem;
-  align-items: stretch;
-  width: 100%;
+.movie-card-link {
+  text-decoration: none;
+  color: inherit;
+  display: block;
+  height: 100%;
 }
 
 .movie-card {
@@ -16,15 +12,28 @@
   transition:
     transform 0.3s ease,
     box-shadow 0.3s ease;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
 }
 
 .movie-card:hover {
   transform: translateY(-6px);
-  box-shadow:
-    0 12px 30px rgba(0, 0, 0, 0.35);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+}
+
+.movie-grid {
+  display: grid;
+  grid-template-columns: repeat(
+    auto-fill,
+    minmax(240px, 1fr)
+  );
+  gap: 1.5rem;
+  width: 100%;
+}
+
+.movie-grid-item {
+  width: 100%;
 }
 
 .movie-poster-wrapper {
