@@ -13,8 +13,10 @@ const FavoriteButton = ({
   const favorite =
     isFavorite(movie.id);
 
-  const handleClick = () => {
+  const handleClick = (e) => {
     toggleFavorite(movie);
+    e.preventDefault();
+    e.stopPropagation();
   };
 
   return (
